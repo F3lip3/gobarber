@@ -6,6 +6,11 @@
   "author": "Felipe Humberto Teixeira <felipe@dinfo.com.br>",
   "license": "MIT",
   "private": true,
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
   "workspaces": {
     "packages": [
       "packages/*"
@@ -14,11 +19,6 @@
       "**/typeorm/**",
       "**/typeorm"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
